@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		var wjl={
+			name:'王健林',
+			money: 1000000000000,
+			cars:'兰博基尼',
+			houes:'别墅',
+			play:function(){
+				console.log(666)
+			}
+		}
+		var wsc={
+			name:'王思聪'
+		}
+
+		// for(var key in wjl){
+		// 	if(wsc[key]){
+		// 		continue;
+		// 	}
+		// 	wsc[key] = wjl[key]
+		// }
+
+		function extend(parent , child){
+			for(var key in parent){
+				if(child[key]){
+					continue;
+				}
+				child[key] = parent[key]
+			}
+		}
+		extend(wjl,wsc)
+		console.log(wsc)
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		var obj = {
+			0: 10,
+			1:100,
+			2:1000,
+			3:10000,
+			length:4
+		}
+		Array.prototype.push.call(obj,999)
+		console.log(obj)
+		Array.prototype.splice.call(obj,1,2)
+		console.log(obj)
+	</script>
+</body>
+</html>

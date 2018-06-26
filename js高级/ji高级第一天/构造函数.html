@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	function Hero(name,blood,weapon){
+		this.name = name;
+		this.blood = blood;
+		this.weapon = weapon;
+		this.attck = function(){
+			console.log(this.weapon + '攻击敌人')
+		}
+	}
+	var hero = new Hero('赵云',100,'枪');
+	console.log(typeof hero)
+
+	console.log(hero.constructor === Hero);
+    var arr = []; //new Array()
+    console.log(arr.constructor === Array);
+
+    console.log(hero instanceof Hero);
+    var arr1 = [];
+    console.log(arr1 instanceof Array);
+</script>

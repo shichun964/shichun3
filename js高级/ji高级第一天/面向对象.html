@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	
+</body>
+</html>
+<script>
+	function Student(name,subject,score){
+		this.name = name;
+		this.subject = subject;
+		this.score = score;
+		this.printScore = function(){
+			console.log(this.name,this.subject,this.score)
+		}
+	}
+	var sut1 = new Student('zs','语文',90)
+	var sut2 = new Student('ls','数学',89)
+	sut1.printScore()
+	sut2.printScore()
+</script>

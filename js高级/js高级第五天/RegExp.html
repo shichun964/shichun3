@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		var a = new RegExp('ab[a-z]','i');
+		var str = 'abc';
+		console.log(a.test(str));
+
+		var b = /ab[a-z]/i;
+		var str1 = 'abd';
+		console.log(a.test(str1))
+	</script>
+</body>
+</html>

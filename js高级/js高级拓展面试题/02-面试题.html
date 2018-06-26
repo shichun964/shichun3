@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+</body>
+<script>
+	// 1, 读取代码, 然后预解析, 得到 Foo 函数与 getName 函数
+	
+	function Foo(){
+		getName = function(){ alert(1) }
+		return this
+	}
+	
+
+
+	Foo.getName = function(){ alert(2) }
+	Foo.prototype.getName = function(){ alert(3) }
+
+	getName = function(){ alert(4)} 
+
+	function getName(){ 
+		alert(5)
+	}
+    // 结果是什么????
+	Foo.getName()
+	getName()       
+	Foo().getName()
+	getName()
+	new Foo.getName() 
+	new Foo().getName() 
+	
+	new new Foo().getName() 
+	
+
+
+   // 2 4 1 1 2 3 3
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		function Person() {
+	      this.name = 'zs';
+	      this.age = 18;
+	      this.sex = '男';
+	    }
+
+	    // 子类型
+	    function Student() {
+	      this.score = 100;
+	    }
+
+	    Student.prototype = new Person();
+	    Student.prototype.constructor = Student;
+
+
+
+	    var s1 = new Student();
+	    console.log(s1.constructor);
+	    console.dir(s1);
+
+	    function Teacher() {
+	      this.salary = 3000;
+	    }
+
+	</script>
+</body>
+</html>

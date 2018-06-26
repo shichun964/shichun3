@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>面向对象复习</title>
+</head>
+<body>
+    <button class="btn">按钮</button>
+</body>
+</html>
+<script>
+// 1. js中的设计模式
+// 1.1 工厂模式
+// 1.2 构造函数模式 
+// 主推 组合式设计模式 -- > 构造函数模式 + 原型模式 (所有的属性全部放到构造函数中, 所有方法全部放到原型对象上)
+function Itcast (options) { // options是一个对象
+    options = options || {}
+    this.name = options.name || 'web16'
+    this.age = options.age || 19
+}
+Itcast.prototype.sayHi = function() {
+    console.log('我是sayhi')
+}
+/* Itcast.prototype = {
+    hello: function() {
+        console.log('hello world')
+    },
+    
+} */
+
+// new
+var ss = new Itcast({})
+// console.log(ss)
+// 2. bind和call和apply改变this指向
+function fn (a, b) {
+    console.log(this, 666, a + b)
+}
+// fn() // window 666
+var rr = fn.bind({name: 999}, 12, 16)
+// rr()
+
+fn.call([45, 66], 88, 99)
+fn.apply([45, 66], [88, 99])
+
+// fn()
+
+
+// 3. js中的继承
+// 3.1 对象的继承
+/* var a = {name: 66}
+var b = {}
+for (var key in a) {
+    b[key] = a[key]
+} */
+// class类
+// 3.2 原型继承
+function Parent() {
+    this.name = 666
+}
+Parent.prototype.add = function() {
+    console.log('下雨天，留客天天留我不留')
+}
+/* Parent.prototype = {
+    add: function() {
+        console.log('下雨天，留客天天留我不留')
+    }
+} */
+// chilid 如果你不能打败它 那你就加入它
+function Child() {
+    this.age = 'dd'
+}
+Child.prototype = Parent.prototype
+Child.prototype.ssss = function() {
+    console.log(888)
+}
+console.log(Parent.prototype)
+// 3.3 借用构造函数继承
+function Child2 () {
+    // this.ddd = 'ddd'
+    Parent.call(this)
+    // class不仅是借用了Parent的方法还是帮他调用了同时改变了方法中的this
+}
+var qq = new Child2()
+// console.log(qq)
+// 3.4 组合继承
+function Child3 () {
+    Parent.call(this)
+}
+// Child.prototype = Parent.prototype
+Child.prototype = new Parent()
+// 4. 其他
+// 自调用函数
+/* ;(function (a, b) {
+    console.log(a + b)
+})(10, 30) */
+;(function (w, b) {
+    w.yy = 9999
+})(window, 30)
+
+console.log(yy)
+</script>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<script>
+		function fn(x,y){
+			console.log(this);
+			console.log(x + y);
+		}
+		var o = {
+			name:'zs'
+		}
+		
+		// var f = fn.bind(o,1,2)
+		// f()
+
+		fn.call(o,3,6)
+	</script>
+</body>
+</html>

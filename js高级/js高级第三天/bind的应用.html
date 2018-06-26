@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+	<button></button>
+	<script>
+		var obj = {
+			name:'zs',
+			fun:function(){
+				console.log(this);
+				setInterval(function(){
+					console.log(this.name);
+				}.bind(this),1000)
+			}
+		}
+		obj.fun()
+
+		var btn = document.querySelector('button');
+		btn.onclick = function(){
+			console.log(this)
+		}.bind(obj)
+	</script>
+</body>
+</html>
