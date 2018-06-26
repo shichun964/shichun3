@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title></title>
+    <style>
+        body{
+            background:-webkit-linear-gradient( top,pink 50%,#4bb6fe 100%);
+        }
+        .show{
+            width: 600px;
+            height: 600px;
+            margin: 0 auto;
+            /* background: pink; */
+            position: relative;
+            animation: remove 0.5s linear infinite;
+        }
+        .box1{
+            width: 200px;
+            height: 200px;
+            background: red;
+            box-shadow:2px 2px 50px red;
+            position: absolute;
+            top:115px;
+            left:120px;
+            transform: rotate(45deg) scale(0.9,0.9);
+            /* animation: shadow 0.5s linear infinite; */
+            z-index: 3;
+        }
+        .box2{
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            border:1px solid rgb(248, 2, 2);
+            box-shadow:2px 2px 50px red;
+            z-index: 2;
+            background:red;
+            position: absolute;
+            top:6%;
+            left:9%;
+            transform: translate(-50%,-50%);
+            transform: rotate(45deg);
+            /* animation: shadow 0.5s linear infinite; */
+        }
+        .box3{
+            width: 200px;
+            height: 200px;
+            background:red;
+            box-shadow:2px 2px 50px red;
+            border-radius: 50%;
+            position: absolute;
+            top:6%;
+            left:31%;
+            transform: translate(-50%,-50%);
+            transform: rotate(45deg);
+            /* animation: shadow 0.5s linear infinite; */
+            z-index: 1;
+        }
+        @keyframes remove{
+            form{
+                transform:scale(0.5,0.5) ;
+            }
+            to{
+                transform:scale(0.9,0.9);
+            }
+        }
+        /* @keyframes shadow{
+            form{
+                box-shadow:0 0 0  red;
+            }
+            to{
+                box-shadow:2px 2px 50px red;
+            }
+        } */
+    </style>
+</head>
+<body>
+
+    <div class="show">
+        <div class="box1"></div>
+        <div class="box2"></div>
+        <div class="box3"></div>
+    </div>
+</body>
+</html>
